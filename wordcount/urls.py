@@ -18,9 +18,12 @@ from django.urls import path
 
 from . import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name = 'homepageurlname'),
     path('count/', views.countfunc, name = 'refcount'),
-    path('about/', views.aboutfunc, name = 'abouturlname')
+    path('about/', views.aboutfunc, name = 'abouturlname'),
+    path('count/nextabout/', views.aboutfunc, name='nextabouturl')
 ]
