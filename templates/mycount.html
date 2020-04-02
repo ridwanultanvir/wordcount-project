@@ -9,3 +9,13 @@
 {{reftext}}
 
 </h3>
+
+<!-- key= word ; value= counttotal -->
+
+{% for word, counttotal in refworddictionary %}
+
+{{word}}  &nbsp    &nbsp  &nbsp
+{{counttotal}}
+<br/>
+
+{% endfor %}

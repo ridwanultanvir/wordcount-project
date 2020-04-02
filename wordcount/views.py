@@ -24,4 +24,14 @@ def countfunc(request):
     print(fulltext)
     wordlist = fulltext.split()
 
-    return render(request, 'mycount.html', {'reftext':fulltext, 'lenwordlist':len(wordlist)})
+
+    worddictionary= {}
+
+
+    for word in wordlist:
+        if word in worddictionary:
+            worddictionary[word] += 1
+        else:
+            worddictionary[word] = 1
+
+    return render(request, 'mycount.html', {'reftext':fulltext, 'lenwordlist':len(wordlist),'refworddictionary': worddictionary.items()})
