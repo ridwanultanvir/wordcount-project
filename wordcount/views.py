@@ -9,5 +9,19 @@ def homepage(request):
 def mark(request):
     return HttpResponse('<h1> Your mark is 0 </h1>')
 
-def count(request):
-    return render(request, 'mycount.html')
+
+"""
+[02/Apr/2020 12:52:41] "GET / HTTP/1.1" 200 219
+TIP TOP
+TIK TOK
+WE ARE IN 1111111111111111111111111111111111111111111
+
+in command line printed
+
+"""
+def countfunc(request):
+    fulltext = request.GET['textarea_name']
+    print(fulltext)
+    wordlist = fulltext.split()
+
+    return render(request, 'mycount.html', {'reftext':fulltext, 'lenwordlist':len(wordlist)})
