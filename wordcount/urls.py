@@ -21,5 +21,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
-    path('mark/', views.mark)
+    path('count/', views.count, name = 'refcount')
 ]
